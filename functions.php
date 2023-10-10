@@ -44,7 +44,6 @@ function sendMailTo(OODBBean $student): void
         ->to($student->email)
         ->subject('Matrícula confirmada')
         ->text($mensagem);
-
     $senha = getenv('GMAIL_PASSWORD');
     $transport = Transport::fromDsn("gmail+smtp://$usuario:$senha@default");
     $mailer = new Mailer($transport);
